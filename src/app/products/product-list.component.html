@@ -6,11 +6,12 @@
         <div class="row">
             <div class="col-md-2">Filter By:</div>
             <div class="col-md-4">
-                <input type="text" />
+                <input type="text" 
+                    [(ngModel)]='listFilter' />
             </div>
         </div>
         <div class="row">
-            <h4>Filtered By:</h4>
+            <h4>Filtered By: {{listFilter}}</h4>
         </div>
     </div>
 </div>
@@ -40,17 +41,17 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let product of products">
+            <tr *ngFor="let product of filteredProducts">
                 <td>
                     <img *ngIf="showImage"
                     [src]="product.imageUrl" 
                     [style.width.px]="imageWidth" 
                     [style.margin.px]="imageMargin" >
                 </td>
-                <td>{{product.productName}}</td>
-                <td>{{product.productCode}}</td>
+                <td>{{product.productName | uppercase}}</td>
+                <td>{{product.productCode | convertToSpaces:"-" }}</td>
                 <td>{{product.releaseDate}}</td>
-                <td>${{product.price}}</td>
+                <td>{{product.price | currency:'GBP'}}</td>
                 <td>{{product.starRating}}</td>
             </tr>
         </tbody>
