@@ -7,7 +7,6 @@ import { ConvertToSpaces } from './shared/convert-to-space.pipe';
 import { PageTitleComponent } from './pageTitle.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
