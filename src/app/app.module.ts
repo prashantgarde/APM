@@ -5,7 +5,8 @@ import { AppComponent } from './app.component';
 import { ProductListComponent } from './products/product-list.component';
 import { ConvertToSpaces } from './shared/convert-to-space.pipe';
 import { PageTitleComponent } from './pageTitle.component';
-import { StarComponent } from './shared/star.component';
+import { StarComponent } from './shared/star.component';  
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { StarComponent } from './shared/star.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   bootstrap: [AppComponent]
 })
